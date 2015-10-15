@@ -8,7 +8,7 @@
 
 	<div ng-controller="IndexController as ctrl">
 
-		<form name="loginForm">
+		<form name="loginForm" ng-submit="ctrl.submit(loginForm)" novalidate>
 
 	    	<input type="email" name="email" placeholder="Email address" ng-model="ctrl.user.email" required>
 			<p ng-show="loginForm.email.$error.required">Please enter your email</p>
