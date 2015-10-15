@@ -11,11 +11,11 @@
 		<form name="loginForm" ng-submit="ctrl.submit(loginForm)" novalidate>
 
 	    	<input type="email" name="email" placeholder="Email address" ng-model="ctrl.user.email" required>
-			<p ng-show="loginForm.email.$error.required">Please enter your email</p>
-			<p ng-show="loginForm.email.$error.email">Please enter a valid email</p>
+			<p ng-show="ctrl.submitted && loginForm.email.$error.required">Please enter your email</p>
+			<p ng-show="ctrl.submitted && loginForm.email.$error.email">Please enter a valid email</p>
 
 			<input type="password" name="password" placeholder="Password" ng-model="ctrl.user.password" required>
-			<p ng-show="loginForm.password.$error.required">Please enter your password</p>
+			<p ng-show="ctrl.submitted && loginForm.password.$error.required">Please enter your password</p>
 
 			<button type="submit">Log in</button>
 
